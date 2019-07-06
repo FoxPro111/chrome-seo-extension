@@ -8,7 +8,39 @@
     <link rel="stylesheet" href="css/popup.css" />
   </head>
   <body>
-    <div id="message">Injecting script....</div>
+    <div class="popup">
+      <div class="popup__wrap">
+        <div class="popup__fields">
+          <div class="popup__field">
+            <label class="popup__label js-label" for="title">Title:</label>
+            <div class="popup__value" id="title" contenteditable="true"></div>
+          </div>
+          <div class="popup__field">
+            <label class="popup__label js-label" for="description">
+              Description:
+            </label>
+            <div
+              class="popup__value"
+              id="description"
+              contenteditable="true"
+            ></div>
+          </div>
+          <div class="popup__field">
+            <label class="popup__label js-label" for="url">URL:</label>
+            <div class="popup__value" id="url" contenteditable="true"></div>
+          </div>
+        </div>
+
+        <div class="popup__images"></div>
+
+        <div class="popup__button-wrap">
+          <a href="pdf.pdf" class="js-pdf popup__button" download
+            >Save as PDF</a
+          >
+        </div>
+      </div>
+    </div>
+
     <script src="js/popup.js"></script>
   </body>
 </html>
