@@ -4,39 +4,109 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>SEO</title>
     <link rel="stylesheet" href="css/popup.css" />
   </head>
   <body>
     <div class="popup">
-      <div class="popup__wrap">
-        <div class="popup__fields">
-          <div class="popup__field">
-            <label class="popup__label js-label" for="title">Title:</label>
-            <div class="popup__value" id="title" contenteditable="true"></div>
-          </div>
-          <div class="popup__field">
-            <label class="popup__label js-label" for="description">
-              Description:
-            </label>
-            <div
-              class="popup__value"
-              id="description"
-              contenteditable="true"
-            ></div>
-          </div>
-          <div class="popup__field">
-            <label class="popup__label js-label" for="url">URL:</label>
-            <div class="popup__value" id="url" contenteditable="true"></div>
+      <div class="popup__tabs">
+        <div class="popup__tab is-active">
+          <a href="#" class="popup__tab__link" data-tab="page">Page Info</a>
+        </div>
+        <div class="popup__tab">
+          <a href="#" class="popup__tab__link" data-tab="profiles"
+            >All Profiles</a
+          >
+        </div>
+        <div class="popup__tab">
+          <a href="#" class="popup__tab__link" data-tab="add-profile"
+            >New profile</a
+          >
+        </div>
+      </div>
+      <div class="popup__wrappers">
+        <div class="popup__wrap is-active" id="page">
+          <div class="popup__wrap-inner">
+            <div class="popup__fields">
+              <div class="popup__field">
+                <label class="popup__label">Title:</label>
+                <div
+                  class="popup__value"
+                  id="title"
+                  contenteditable="true"
+                ></div>
+              </div>
+              <div class="popup__field">
+                <label class="popup__label">
+                  Description:
+                </label>
+                <div
+                  class="popup__value"
+                  id="description"
+                  contenteditable="true"
+                ></div>
+              </div>
+              <div class="popup__field">
+                <label class="popup__label">URL:</label>
+                <div class="popup__value" id="url" contenteditable="true"></div>
+              </div>
+              <div class="popup__field">
+                <label class="popup__label">Profile settings:</label>
+                <div class="popup__select__wrap"></div>
+              </div>
+            </div>
+
+            <div class="popup__images"></div>
+
+            <div class="popup__button-wrap">
+              <button class="js-send popup__button">SEND</button>
+            </div>
           </div>
         </div>
 
-        <div class="popup__images"></div>
+        <div class="popup__wrap" id="profiles">
+          <div class="popup__wrap-inner">
+            <div class="popup__fields">
+              <div class="profiles"></div>
+              <div class="popup__button-wrap">
+                <a href="#" class="js-clear popup__button">CLEAR ALL</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <div class="popup__button-wrap">
-          <a href="pdf.pdf" class="js-pdf popup__button" download
-            >Save as PDF</a
-          >
+        <div class="popup__wrap" id="add-profile">
+          <div class="popup__wrap-inner">
+            <div class="popup__field">
+              <label class="popup__label">Profile name:</label>
+              <div
+                class="popup__value"
+                id="input-profile"
+                contenteditable="true"
+              ></div>
+            </div>
+            <div class="popup__field">
+              <label class="popup__label">
+                App key:
+              </label>
+              <div
+                class="popup__value"
+                id="input-key"
+                contenteditable="true"
+              ></div>
+            </div>
+            <div class="popup__field">
+              <label class="popup__label">App secret:</label>
+              <div
+                class="popup__value"
+                id="input-secret"
+                contenteditable="true"
+              ></div>
+            </div>
+            <div class="popup__button-wrap">
+              <a href="#" class="js-add-profile popup__button">ADD PROFILE</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

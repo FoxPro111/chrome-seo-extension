@@ -3,12 +3,17 @@
 }
 
 body {
-  min-width: 320px;
-  max-width: 400px;
+  width: 340px;
   margin: 0;
   font-size: 15px;
   line-height: 1.4;
   font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: #d8d8d8;
+  word-break: break-word;
+
+  &.options {
+    max-width: 100%;
+  }
 }
 
 img {
@@ -18,12 +23,60 @@ img {
 }
 
 .popup {
-  padding: 20px 15px;
-  background-color: #d8d8d8;
+  &__wrap-inner {
+    padding: 20px 15px;
+  }
 
+  &__wrap {
+    position: relative;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    -webkit-transition: visibility, opacity 1s;
+    -o-transition: visibility, opacity 1s;
+    transition: visibility, opacity 1s;
+
+    &.is-active {
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+  }
+
+  &__tab {
+    flex: 1;
+
+    a {
+      width: 100%;
+      display: inline-block;
+      padding: 5px 15px;
+      text-decoration: none;
+      color: #222;
+      background-color: #fff;
+      text-align: center;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    &.is-active {
+      a {
+        color: #222;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.popup {
   &__label {
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 6px;
     display: inline-block;
   }
@@ -45,6 +98,10 @@ img {
     max-height: 80px;
     overflow: auto;
 
+    &.not-valid {
+      border-color: red;
+    }
+
     &:focus {
       outline: 0;
       box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.8);
@@ -62,14 +119,21 @@ img {
     background-color: #5b55bc;
     color: #fff;
     box-shadow: none;
-    padding: 10px 15px;
-    min-width: 120px;
+    padding: 7px 10px;
+    min-width: 100px;
     cursor: pointer;
     border: 2px solid #5b55bc;
     transition: 0.35s;
     font-weight: 600;
     display: inline-block;
     text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
 
     &:hover {
       color: #5b55bc;
@@ -152,5 +216,76 @@ img {
       border-left-color: transparent;
       border-right-color: transparent;
     }
+  }
+}
+
+.profiles {
+  &__list {
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    display: none;
+  }
+
+  &__header {
+    background-color: #fff;
+    padding: 5px 70px 5px 10px;
+    position: relative;
+    line-height: 1.34;
+  }
+
+  &__content {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+  }
+
+  &__delete,
+  &__edit {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    text-decoration: none;
+    transition: 0.35s;
+
+    &:hover {
+      background-color: #222;
+    }
+  }
+
+  &__delete {
+    color: #fff;
+    background-color: #c10000;
+    right: 0;
+  }
+
+  &__edit {
+    background: url(../icons/edit.png) #5b55bc no-repeat 50%/14px;
+    right: 30px;
+  }
+
+  label {
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+
+  &__fields {
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  &__update {
+    display: inline-block;
+    color: #222;
+    font-weight: 600;
   }
 }

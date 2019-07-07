@@ -22,5 +22,5 @@
       "description": "Opens popup.html"
     }
   },
-  "permissions": ["tabs", "<all_urls>"]
+  "permissions": ["tabs", "<all_urls>", "storage"]
 }
