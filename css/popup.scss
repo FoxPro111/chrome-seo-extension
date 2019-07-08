@@ -1,3 +1,4 @@
+// GENERAL
 * {
   box-sizing: border-box;
 }
@@ -10,10 +11,6 @@ body {
   font-family: "Segoe UI", Tahoma, sans-serif;
   background-color: #d8d8d8;
   word-break: break-word;
-
-  &.options {
-    max-width: 100%;
-  }
 }
 
 img {
@@ -22,6 +19,7 @@ img {
   display: block;
 }
 
+// TAB STRUCTURE
 .popup {
   &__wrap-inner {
     padding: 20px 15px;
@@ -33,8 +31,6 @@ img {
     opacity: 0;
     overflow: hidden;
     visibility: hidden;
-    -webkit-transition: visibility, opacity 1s;
-    -o-transition: visibility, opacity 1s;
     transition: visibility, opacity 1s;
 
     &.is-active {
@@ -73,6 +69,7 @@ img {
   }
 }
 
+// INPUT WITH LABELS
 .popup {
   &__label {
     font-size: 15px;
@@ -109,6 +106,7 @@ img {
   }
 }
 
+// BUTTONS
 .popup {
   &__button-wrap {
     text-align: right;
@@ -142,9 +140,8 @@ img {
   }
 }
 
+// IMAGE LIST
 .popup {
-  $p: &;
-
   &__images-list {
     display: flex;
     flex-wrap: wrap;
@@ -199,7 +196,7 @@ img {
     visibility: hidden;
     transition: 0.35s;
 
-    #{$p}__image:hover & {
+    .popup__image:hover & {
       opacity: 1;
       visibility: visible;
     }
@@ -219,6 +216,7 @@ img {
   }
 }
 
+// PROFILES
 .profiles {
   &__list {
     margin-bottom: 20px;
